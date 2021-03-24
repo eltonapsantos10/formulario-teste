@@ -1,29 +1,49 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
+import React from 'react'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+export default function home() {
+  return <div>
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <StaticImage
-      src="../images/gatsby-astronaut.png"
-      width={300}
-      quality={95}
-      formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
-      style={{ marginBottom: `1.45rem` }}
-    />
-    <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-    </p>
-  </Layout>
-)
+    <form
+      name="contact v1"
+      method="post"
+      data-netlify="true"
+      onSubmit="submit"
+    >
 
-export default IndexPage
+      <input type="hidden" name="form-name" value="contact v1"
+
+      />
+
+    <div>
+      <label> First <br/>
+      <input type="text" name="first-name"/>
+      </label>
+    </div>
+
+
+    <div>
+      <label htmlFor="email">Email</label> <br/>
+      <input id="email" type="email" name="email"/>
+    </div>
+
+
+
+    <div>
+    <label> Any comments? <br/>
+    <textarea name="comments"></textarea>
+
+    </label>
+
+
+    </div>
+
+      <button type="submit">Submit The Results</button>
+
+
+
+
+    </form>
+
+  </div>
+
+}
